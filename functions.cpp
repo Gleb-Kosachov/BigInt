@@ -46,6 +46,11 @@ long long int BigInt::to_int() const
     return result;
 }
 
+bool BigInt::to_bool() const
+{
+    return (this->operator!=(0));
+}
+
 BigInt BigInt::power(BigInt p) const
 {
     if (p.has_minus) return 0;

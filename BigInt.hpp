@@ -53,8 +53,6 @@ public:
     bool operator>=(const BigInt &) const;
     bool operator<=(const BigInt &) const;
     
-    bool operator!() const; //use !! to cast BigInt to bool
-    
     void operator+=(const BigInt &);
     
     void operator-=(const BigInt &);
@@ -70,6 +68,8 @@ public:
     BigInt fact() const; //returns factorial
     
     long long int to_int() const; //converts BigInt to usual int.
+    
+    bool to_bool() const; //casts BigInt to bool.
     
     BigInt power(BigInt) const;
     

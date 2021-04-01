@@ -258,12 +258,6 @@ BigInt BigInt::operator-() const
     return result;
 }
 
-bool BigInt::operator!() const
-{
-    if (*this != 0) return false;
-    return true;
-}
-
 void BigInt::operator+=(const BigInt &op)
 {
     *this = *this + op;
