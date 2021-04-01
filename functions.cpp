@@ -55,7 +55,7 @@ BigInt BigInt::power(BigInt p) const
 {
     if (p.has_minus) return 0;
     BigInt result = 1;
-    while (!!p--)
+    while ((p--).to_bool())
     {
         result *= *this;
     }
@@ -70,10 +70,10 @@ BigInt BigInt::abs() const
 
 bool BigInt::is_prime() const
 {
-    if (!(*this % 2) || this->operator<(2)) return false;
+    if (!(*this % 2).to_bool() || this->operator<(2)) return false;
     for (BigInt i = 3; i < this->abs(); i += 2)
     {
-        if (!(*this % i)) return false;
+        if (!(*this % i).to_bool()) return false;
     }
     return true;
 }
@@ -82,7 +82,7 @@ BigInt BigInt::sqrt() const
 {
     if (*this < 0) throw std::invalid_argument("Square root of negative number!" + std::to_string(__LINE__));
     BigInt result = *this - 1;
-    if (!*this) result = 0;
+    if (!this->to_bool()) result = 0;
     else if (*this < 4) result = 1;
     else if (*this < 9) result = 2;
     else if (*this < 16) result = 3;
