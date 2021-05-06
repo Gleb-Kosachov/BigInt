@@ -9,6 +9,7 @@
 #define BigInt_hpp
 
 #include <deque>
+#include <string>
 
 class BigInt final //integer type with no size limits
 {
@@ -21,6 +22,7 @@ public:
     BigInt(long long int);
     BigInt(const BigInt &);
     BigInt(const std::deque<char> &);
+    explicit BigInt(const char *str);
     
     friend std::ostream &operator<<(std::ostream &, const BigInt &);
     friend std::istream &operator>>(std::istream &, BigInt &);
