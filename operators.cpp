@@ -282,3 +282,8 @@ void BigInt::operator%=(const BigInt &op)
 {
     *this = *this % op;
 }
+
+BigInt::operator bool() const
+{
+    return this->to_bool();
+}

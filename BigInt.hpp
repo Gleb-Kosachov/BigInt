@@ -69,7 +69,9 @@ public:
     
     long long int to_int() const; //converts BigInt to usual int.
     
-    bool to_bool() const; //casts BigInt to bool.
+    bool to_bool() const;
+    
+    explicit operator bool() const;
     
     BigInt power(BigInt) const;
     
